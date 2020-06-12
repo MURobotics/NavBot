@@ -10,10 +10,25 @@
 
 <SettingsScreen>:
     BoxLayout:
-        Button:
-            text: 'My settings button'
-        Button:
-            text: 'Back to menu'
-            on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.current = 'menu'
+        orientation: 'horizontal'
+        Label:
+            text: 'Settings'
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'Back to menu'
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'menu'

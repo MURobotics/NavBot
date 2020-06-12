@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="267b965d-08ec-455a-b056-a71cb65d7de4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Project/screen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/Project/screen.kv" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dEFVazSB9oxoeb1UGBd3TRjdqS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="NavBot" sdk-home="/usr/bin/python3">
+        <option name="mySdkHome" value="/usr/bin/python3" />
+        <option name="myModuleName" value="NavBot" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="Hello" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NavBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/Hello.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kivyTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NavBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/kivyTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NavBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testscreen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NavBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/testscreen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.testscreen" />
+        <item itemvalue="Python.kivyTest" />
+        <item itemvalue="Python.Hello" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="267b965d-08ec-455a-b056-a71cb65d7de4" name="Default Changelist" comment="" />
+      <created>1591982370043</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591982370043</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="539" y="345" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591990047075">
+      <screen x="0" y="23" width="1630" height="1027" />
+    </state>
+    <state x="539" y="345" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1630.1027@0.23.1630.1027" timestamp="1591990047075" />
+    <state x="602" y="297" key="FileChooserDialogImpl" timestamp="1591983823457">
+      <screen x="0" y="23" width="1630" height="1027" />
+    </state>
+    <state x="602" y="297" key="FileChooserDialogImpl/0.23.1630.1027@0.23.1630.1027" timestamp="1591983823457" />
+    <state width="794" height="227" key="GridCell.Tab.0.bottom" timestamp="1591991300011">
+      <screen x="0" y="23" width="1635" height="1027" />
+    </state>
+    <state width="794" height="227" key="GridCell.Tab.0.bottom/0.23.1629.1027@0.23.1629.1027" timestamp="1591990528163" />
+    <state width="794" height="227" key="GridCell.Tab.0.bottom/0.23.1630.1027@0.23.1630.1027" timestamp="1591990471470" />
+    <state width="794" height="267" key="GridCell.Tab.0.bottom/0.23.1632.1027@0.23.1632.1027" timestamp="1591988904216" />
+    <state width="794" height="227" key="GridCell.Tab.0.bottom/0.23.1635.1027@0.23.1635.1027" timestamp="1591991300011" />
+    <state width="794" height="227" key="GridCell.Tab.0.center" timestamp="1591991300011">
+      <screen x="0" y="23" width="1635" height="1027" />
+    </state>
+    <state width="794" height="227" key="GridCell.Tab.0.center/0.23.1629.1027@0.23.1629.1027" timestamp="1591990528162" />
+    <state width="794" height="227" key="GridCell.Tab.0.center/0.23.1630.1027@0.23.1630.1027" timestamp="1591990471469" />
+    <state width="794" height="267" key="GridCell.Tab.0.center/0.23.1632.1027@0.23.1632.1027" timestamp="1591988904216" />
+    <state width="794" height="227" key="GridCell.Tab.0.center/0.23.1635.1027@0.23.1635.1027" timestamp="1591991300011" />
+    <state width="794" height="227" key="GridCell.Tab.0.left" timestamp="1591991300010">
+      <screen x="0" y="23" width="1635" height="1027" />
+    </state>
+    <state width="794" height="227" key="GridCell.Tab.0.left/0.23.1629.1027@0.23.1629.1027" timestamp="1591990528162" />
+    <state width="794" height="227" key="GridCell.Tab.0.left/0.23.1630.1027@0.23.1630.1027" timestamp="1591990471469" />
+    <state width="794" height="267" key="GridCell.Tab.0.left/0.23.1632.1027@0.23.1632.1027" timestamp="1591988904215" />
+    <state width="794" height="227" key="GridCell.Tab.0.left/0.23.1635.1027@0.23.1635.1027" timestamp="1591991300010" />
+    <state width="794" height="227" key="GridCell.Tab.0.right" timestamp="1591991300011">
+      <screen x="0" y="23" width="1635" height="1027" />
+    </state>
+    <state width="794" height="227" key="GridCell.Tab.0.right/0.23.1629.1027@0.23.1629.1027" timestamp="1591990528163" />
+    <state width="794" height="227" key="GridCell.Tab.0.right/0.23.1630.1027@0.23.1630.1027" timestamp="1591990471470" />
+    <state width="794" height="267" key="GridCell.Tab.0.right/0.23.1632.1027@0.23.1632.1027" timestamp="1591988904216" />
+    <state width="794" height="227" key="GridCell.Tab.0.right/0.23.1635.1027@0.23.1635.1027" timestamp="1591991300011" />
+    <state x="316" y="175" key="SettingsEditor" timestamp="1591984154206">
+      <screen x="0" y="23" width="1630" height="1027" />
+    </state>
+    <state x="316" y="175" key="SettingsEditor/0.23.1630.1027@0.23.1630.1027" timestamp="1591984154206" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///Library/Python/3.7/site-packages/kivy/app.py</url>
+          <line>489</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
