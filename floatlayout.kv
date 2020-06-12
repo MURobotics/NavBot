@@ -12,9 +12,8 @@ WindowManager:
     about:about
     findroom:findroom
 
-    Button:
-        font_size:20
-        text: "INSERT MIZZOU LOGO"
+    Image:
+        source: 'pictures/tiger.jpg'
         pos_hint: {"x":0, "top":1}
         size_hint: 0.3,0.2
 
@@ -30,8 +29,8 @@ WindowManager:
         pos_hint: {"x":0,"bottom":1}
         size_hint: 0.3,0.4
         on_release: app.root.current = "aboutwindow"
-    Label:
-        text: "INSERT MAP HERE"
+    Image:
+        source:'pictures/FirstFloor.PNG'
         pos_hint: {"x":0.3}
         size_hint: 0.7,1
 
