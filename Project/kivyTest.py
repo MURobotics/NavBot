@@ -19,8 +19,6 @@ sm.add_widget(MenuScreen(name='menu'))
 sm.add_widget(SettingsScreen(name='settings'))
 sm.current = 'menu'
 
-
-
 class Menu(App):
     def build(self):
         return sm

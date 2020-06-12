@@ -1,12 +1,18 @@
 <MenuScreen>:
     BoxLayout:
+        Label:
+            text: 'hehe, map goes null'
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        padding: [30,30,0,0]
         Button:
             text: 'Goto settings'
+            size: 250,75
+            size_hint: None, None
             on_press:
                 root.manager.transition.direction = 'right'
                 root.manager.current = 'settings'
-        Button:
-            text: 'Quit'
 
 <SettingsScreen>:
     BoxLayout:
@@ -16,19 +22,22 @@
         BoxLayout:
             orientation: 'vertical'
             Button:
-                text: 'My settings button'
-            Button:
-                text: 'My settings button'
-            Button:
-                text: 'My settings button'
-            Button:
-                text: 'My settings button'
-            Button:
-                text: 'My settings button'
-            Button:
-                text: 'My settings button'
-            Button:
-                text: 'Back to menu'
+                text: 'Back to menu ->'
                 on_press:
                     root.manager.transition.direction = 'left'
                     root.manager.current = 'menu'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'My settings button'
+            Button:
+                text: 'Shutdown'
+                on_press:
+                    text:"Exit"
+                    on_press: app.stop()
