@@ -1,4 +1,6 @@
 *DS_STORE
 *.zip
 
-venv
+
+/.idea/
+/venv/
