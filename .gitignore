@@ -1,6 +1,5 @@
 /venv/
 /.idea/
-/__pycache__/
-pychace
+Project/__pycache__/
 LICENSE
 *DS_STORE
