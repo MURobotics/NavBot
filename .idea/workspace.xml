@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdd5213a-f316-4064-80ad-297f62dc1410" name="Default Changelist" comment="" />
+    <list default="true" id="cdd5213a-f316-4064-80ad-297f62dc1410" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kivy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kivy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/floatlayout.kv" beforeDir="false" afterPath="$PROJECT_DIR$/floatlayout.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainUI.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +39,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1dESdEi9Sbe1yGNEAbaGH032UqI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,6 +50,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/mainUI.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -34,7 +63,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Nicholas\Desktop\kivy\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\Nicholas\AppData\Local\Programs\Python\Python37\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -62,17 +91,29 @@
       <updated>1591988845948</updated>
       <workItem from="1591988856966" duration="883000" />
       <workItem from="1591989763781" duration="8857000" />
+      <workItem from="1591999102805" duration="1518000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591994703743">
+    <state x="558" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591999355400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591994703743" />
+    <state x="558" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591999355400" />
     <state x="778" y="374" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591992541403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -89,32 +130,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="971" y="315" width="733" height="489" key="EnvironmentVariablesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591988959693" />
-    <state x="884" y="315" key="FileChooserDialogImpl" timestamp="1591994702446">
+    <state x="884" y="315" key="FileChooserDialogImpl" timestamp="1591999791594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="884" y="315" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591994702446" />
-    <state width="1340" height="266" key="GridCell.Tab.0.bottom" timestamp="1591998137315">
+    <state x="884" y="315" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591999791594" />
+    <state width="1534" height="266" key="GridCell.Tab.0.bottom" timestamp="1592000596453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591998137315" />
-    <state width="1340" height="266" key="GridCell.Tab.0.center" timestamp="1591998137315">
+    <state width="1534" height="266" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592000596453" />
+    <state width="1534" height="266" key="GridCell.Tab.0.center" timestamp="1592000596453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591998137315" />
-    <state width="1340" height="266" key="GridCell.Tab.0.left" timestamp="1591998137315">
+    <state width="1534" height="266" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592000596453" />
+    <state width="1534" height="266" key="GridCell.Tab.0.left" timestamp="1592000596453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591998137315" />
-    <state width="1340" height="266" key="GridCell.Tab.0.right" timestamp="1591998137315">
+    <state width="1534" height="266" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592000596453" />
+    <state width="1534" height="266" key="GridCell.Tab.0.right" timestamp="1592000596453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591998137315" />
-    <state x="159" y="235" key="SettingsEditor" timestamp="1591989628150">
+    <state width="1534" height="266" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592000596453" />
+    <state x="159" y="235" key="SettingsEditor" timestamp="1591999612550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="159" y="235" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591989628150" />
+    <state x="159" y="235" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591999612550" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/NavBot$robotUI.coverage" NAME="robotUI Coverage Results" MODIFIED="1592000625445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/kivy$kivy.coverage" NAME="kivy Coverage Results" MODIFIED="1591989573308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/kivy$robotUI.coverage" NAME="robotUI Coverage Results" MODIFIED="1591998137310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

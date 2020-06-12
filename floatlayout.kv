@@ -23,6 +23,7 @@ WindowManager:
         text: "Find Room"
         pos_hint: {"x":0,"top":0.8}
         size_hint: 0.3,0.4
+        on_release: app.root.current = "findroomwindow"
     Button:
         id:about
         text: "About"
@@ -38,5 +39,9 @@ WindowManager:
     name: "aboutwindow"
     Button:
         text: "Heyo"
+        on_release: app.root.current = "main"
 <FindRoomWindow>:
     name: "findroomwindow"
+    Button:
+        text: "Heyo"
+        on_release: app.root.current = "main"
