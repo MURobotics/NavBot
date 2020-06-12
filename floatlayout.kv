@@ -1,0 +1,42 @@
+WindowManager:
+    MainWindow:
+    AboutWindow:
+    FindRoomWindow:
+<Button>:
+    font_size:40
+    color:1,0.87,0,1
+
+<MainWindow>:
+    name: "main"
+
+    about:about
+    findroom:findroom
+
+    Button:
+        font_size:20
+        text: "INSERT MIZZOU LOGO"
+        pos_hint: {"x":0, "top":1}
+        size_hint: 0.3,0.2
+
+    Button:
+        id:findroom
+        text: "Find Room"
+        pos_hint: {"x":0,"top":0.8}
+        size_hint: 0.3,0.4
+    Button:
+        id:about
+        text: "About"
+        pos_hint: {"x":0,"bottom":1}
+        size_hint: 0.3,0.4
+        on_release: app.root.current = "aboutwindow"
+    Label:
+        text: "INSERT MAP HERE"
+        pos_hint: {"x":0.3}
+        size_hint: 0.7,1
+
+<AboutWindow>:
+    name: "aboutwindow"
+    Button:
+        text: "Heyo"
+<FindRoomWindow>:
+    name: "findroomwindow"

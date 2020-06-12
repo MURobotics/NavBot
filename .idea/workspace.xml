@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="267b965d-08ec-455a-b056-a71cb65d7de4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cdd5213a-f316-4064-80ad-297f62dc1410" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,11 +14,7 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1dEFVazSB9oxoeb1UGBd3TRjdqS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1dESdEi9Sbe1yGNEAbaGH032UqI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,31 +22,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mainUI.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings module-name="NavBot" sdk-home="/usr/bin/python3">
-        <option name="mySdkHome" value="/usr/bin/python3" />
-        <option name="myModuleName" value="NavBot" />
-      </console-settings>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="Hello" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NavBot" />
+  <component name="RunManager">
+    <configuration name="robotUI" type="PythonConfigurationType" factoryName="Python">
+      <module name="kivy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Nicholas\Desktop\kivy\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/Hello.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mainUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -61,152 +49,73 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="kivyTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NavBot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/kivyTest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NavBot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="testscreen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NavBot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/testscreen.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.testscreen" />
-        <item itemvalue="Python.kivyTest" />
-        <item itemvalue="Python.Hello" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="267b965d-08ec-455a-b056-a71cb65d7de4" name="Default Changelist" comment="" />
-      <created>1591982370043</created>
+      <changelist id="cdd5213a-f316-4064-80ad-297f62dc1410" name="Default Changelist" comment="" />
+      <created>1591988845948</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1591982370043</updated>
+      <updated>1591988845948</updated>
+      <workItem from="1591988856966" duration="883000" />
+      <workItem from="1591989763781" duration="8857000" />
     </task>
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="539" y="345" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591990047075">
-      <screen x="0" y="23" width="1630" height="1027" />
-    </state>
-    <state x="539" y="345" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1630.1027@0.23.1630.1027" timestamp="1591990047075" />
-    <state x="602" y="297" key="FileChooserDialogImpl" timestamp="1591983823457">
-      <screen x="0" y="23" width="1630" height="1027" />
-    </state>
-    <state x="602" y="297" key="FileChooserDialogImpl/0.23.1630.1027@0.23.1630.1027" timestamp="1591983823457" />
-    <state width="794" height="227" key="GridCell.Tab.0.bottom" timestamp="1591993908510">
-      <screen x="0" y="23" width="1635" height="1027" />
-    </state>
-    <state width="794" height="227" key="GridCell.Tab.0.bottom/0.23.1629.1027@0.23.1629.1027" timestamp="1591990528163" />
-    <state width="794" height="227" key="GridCell.Tab.0.bottom/0.23.1630.1027@0.23.1630.1027" timestamp="1591990471470" />
-    <state width="794" height="267" key="GridCell.Tab.0.bottom/0.23.1632.1027@0.23.1632.1027" timestamp="1591988904216" />
-    <state width="794" height="227" key="GridCell.Tab.0.bottom/0.23.1635.1027@0.23.1635.1027" timestamp="1591993908510" />
-    <state width="794" height="227" key="GridCell.Tab.0.bottom/0.23.1636.1027@0.23.1636.1027" timestamp="1591991455032" />
-    <state width="794" height="227" key="GridCell.Tab.0.center" timestamp="1591993908510">
-      <screen x="0" y="23" width="1635" height="1027" />
-    </state>
-    <state width="794" height="227" key="GridCell.Tab.0.center/0.23.1629.1027@0.23.1629.1027" timestamp="1591990528162" />
-    <state width="794" height="227" key="GridCell.Tab.0.center/0.23.1630.1027@0.23.1630.1027" timestamp="1591990471469" />
-    <state width="794" height="267" key="GridCell.Tab.0.center/0.23.1632.1027@0.23.1632.1027" timestamp="1591988904216" />
-    <state width="794" height="227" key="GridCell.Tab.0.center/0.23.1635.1027@0.23.1635.1027" timestamp="1591993908510" />
-    <state width="794" height="227" key="GridCell.Tab.0.center/0.23.1636.1027@0.23.1636.1027" timestamp="1591991455032" />
-    <state width="794" height="227" key="GridCell.Tab.0.left" timestamp="1591993908509">
-      <screen x="0" y="23" width="1635" height="1027" />
-    </state>
-    <state width="794" height="227" key="GridCell.Tab.0.left/0.23.1629.1027@0.23.1629.1027" timestamp="1591990528162" />
-    <state width="794" height="227" key="GridCell.Tab.0.left/0.23.1630.1027@0.23.1630.1027" timestamp="1591990471469" />
-    <state width="794" height="267" key="GridCell.Tab.0.left/0.23.1632.1027@0.23.1632.1027" timestamp="1591988904215" />
-    <state width="794" height="227" key="GridCell.Tab.0.left/0.23.1635.1027@0.23.1635.1027" timestamp="1591993908509" />
-    <state width="794" height="227" key="GridCell.Tab.0.left/0.23.1636.1027@0.23.1636.1027" timestamp="1591991455031" />
-    <state width="794" height="227" key="GridCell.Tab.0.right" timestamp="1591993908510">
-      <screen x="0" y="23" width="1635" height="1027" />
-    </state>
-    <state width="794" height="227" key="GridCell.Tab.0.right/0.23.1629.1027@0.23.1629.1027" timestamp="1591990528163" />
-    <state width="794" height="227" key="GridCell.Tab.0.right/0.23.1630.1027@0.23.1630.1027" timestamp="1591990471470" />
-    <state width="794" height="267" key="GridCell.Tab.0.right/0.23.1632.1027@0.23.1632.1027" timestamp="1591988904216" />
-    <state width="794" height="227" key="GridCell.Tab.0.right/0.23.1635.1027@0.23.1635.1027" timestamp="1591993908510" />
-    <state width="794" height="227" key="GridCell.Tab.0.right/0.23.1636.1027@0.23.1636.1027" timestamp="1591991455032" />
-    <state x="316" y="175" key="SettingsEditor" timestamp="1591984154206">
-      <screen x="0" y="23" width="1630" height="1027" />
-    </state>
-    <state x="316" y="175" key="SettingsEditor/0.23.1630.1027@0.23.1630.1027" timestamp="1591984154206" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file:///Library/Python/3.7/site-packages/kivy/app.py</url>
-          <line>489</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="558" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591994703743">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="558" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591994703743" />
+    <state x="778" y="374" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591992541403">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="778" y="374" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591992541403" />
+    <state x="732" y="143" key="#kivy" timestamp="1591989730998">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="732" y="143" key="#kivy/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591989730998" />
+    <state x="732" y="143" key="#robotUI" timestamp="1591989739394">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="732" y="143" key="#robotUI/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591989739394" />
+    <state x="971" y="315" width="733" height="489" key="EnvironmentVariablesDialog" timestamp="1591988959693">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="971" y="315" width="733" height="489" key="EnvironmentVariablesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591988959693" />
+    <state x="884" y="315" key="FileChooserDialogImpl" timestamp="1591994702446">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="884" y="315" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591994702446" />
+    <state width="1340" height="266" key="GridCell.Tab.0.bottom" timestamp="1591998137315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591998137315" />
+    <state width="1340" height="266" key="GridCell.Tab.0.center" timestamp="1591998137315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591998137315" />
+    <state width="1340" height="266" key="GridCell.Tab.0.left" timestamp="1591998137315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591998137315" />
+    <state width="1340" height="266" key="GridCell.Tab.0.right" timestamp="1591998137315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591998137315" />
+    <state x="159" y="235" key="SettingsEditor" timestamp="1591989628150">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="159" y="235" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591989628150" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NavBot$main.coverage" NAME="main Coverage Results" MODIFIED="1591992107893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
+    <SUITE FILE_PATH="coverage/kivy$kivy.coverage" NAME="kivy Coverage Results" MODIFIED="1591989573308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kivy$robotUI.coverage" NAME="robotUI Coverage Results" MODIFIED="1591998137310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -1,0 +1,25 @@
+<MyGrid>:
+
+    about: about
+    findroom: findroom
+
+    GridLayout:
+        cols:2
+        size:root.width, root.height
+
+        GridLayout:
+            cols:1
+
+            Button:
+                id: about
+                text:"About"
+                on_press:root.aboutFunc()
+
+            Button:
+                id: findroom
+                text:"Find a Room"
+                on_press:root.findRoomFunc()
+        Label:
+            text:"INSERT MAP HERE"
+            size: root.width - 20, root.height-20
+            pos: 20, 20
