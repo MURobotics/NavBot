@@ -61,9 +61,10 @@
                     root.manager.transition.direction = 'left'
                     root.manager.current = 'menu'
             Button:
-                text: 'My settings button'
+                text: 'Test Function Call'
                 background_color: 0,0,0,0
                 color: 0,0,0,1
+                on_press: root.changeSettings()
             Button:
                 text: 'My settings button'
                 background_color: 0,0,0,0

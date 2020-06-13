@@ -12,6 +12,8 @@ class MenuScreen(Screen):
     pass
 
 class SettingsScreen(Screen):
+    def changeSettings(self):
+        print('Settings Changed')
     pass
 
 sm = ScreenManager()
