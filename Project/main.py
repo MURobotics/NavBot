@@ -1,5 +1,5 @@
 #main program
-import kivyTest as ui
+import KioskUI as ui
 
 def main():
     ui.Menu().run()
