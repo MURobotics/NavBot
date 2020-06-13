@@ -9,7 +9,7 @@ Builder.load_file('screen.kv')
 
 # Declare the screens
 class MenuScreen(Screen):
-    def changeSettings(self):
+    def navigationTest(self):
         print('Screen Call')
         #This function won't execute much, but will call the connection.py classes to get relevant info and then probably a navigation.py for running navigation to the destination
     pass
