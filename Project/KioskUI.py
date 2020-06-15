@@ -16,6 +16,8 @@ Builder.load_file('Template.kv')
 Builder.load_file('Map.kv')
 Builder.load_file('Settings.kv')
 Config.set('kivy', 'keyboard_mode', 'systemandmulti')
+Config.write()
+
 
 class LocationOption(Button):
     pass

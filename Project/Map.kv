@@ -80,12 +80,12 @@
         anchor_y: 'top'
         padding: [0,30,30,0]
         Button:
-            background_normal: './Images/icon-settings.svg'
-            background_down: './Images/icon-settings.svg'
-            size_hint_y: None
-            width: 100
-            allow_stretch: True
+            background_normal: './Images/Gear.png'
+            background_down: './Images/Gear.png'
             size_hint: None, None
+            width: 50
+            height: 50
+            border: (0, 0, 0, 0)
             on_press:
                 root.manager.transition.direction = 'right'
                 root.manager.current = 'settings'
