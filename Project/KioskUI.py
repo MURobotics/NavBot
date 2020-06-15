@@ -30,7 +30,6 @@ class MenuScreen(Screen):
         self.name = 'home'
         super(Screen, self).__init__(**kwargs)
         self.renderRooms()
-    pass
 
     def navigationTest(self):
         print('Screen Call')
