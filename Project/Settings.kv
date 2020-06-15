@@ -1,0 +1,47 @@
+
+<SettingsScreen>:
+    BackgroundBoxLayout:
+        size_hint: 1,1
+        background_color: 1,1,1,1
+        BackgroundLabel:
+            text: 'Settings'
+            background_color: 0.9411,0.498,0.0470,1
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1,1
+            size_hint_max: 600, 300
+            Button:
+                text: 'Back to menu ->'
+                background_color: 0,0,0,0
+                color: 0,0,0,1
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'menu'
+            Button:
+                text: 'Test Function Call'
+                background_color: 0,0,0,0
+                color: 0,0,0,1
+                on_press: root.changeSettings()
+            Button:
+                text: 'My settings button'
+                background_color: 0,0,0,0
+                color: 0,0,0,1
+            Button:
+                text: 'My settings button'
+                background_color: 0,0,0,0
+                color: 0,0,0,1
+            Button:
+                text: 'My settings button'
+                background_color: 0,0,0,0
+                color: 0,0,0,1
+            Button:
+                text: 'My settings button'
+                background_color: 0,0,0,0
+                color: 0,0,0,1
+            Button:
+                text: 'Shutdown'
+                background_normal: ''
+                background_color: .9,0,0,1
+                on_press:
+                    text:"Exit"
+                    on_press: app.stop()
