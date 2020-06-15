@@ -3,6 +3,7 @@ from kivy.garden.mapview import MapView
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.button import Button
+from kivy.uix.textinput import TextInput
 from kivy.uix.widget import Widget
 from kivy.properties import ListProperty, ObjectProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -21,6 +22,13 @@ class LocationOption(Button):
 
 class Test(VKeyboard):
     player = VKeyboard()
+
+class LimitInput(TextInput):
+    def keyboard_on_key_up(self, keycode, text):
+        if self.readonly and text[1] == "backspace":
+            self.readonly = False
+            self.do_backspace()
+# Credit to user Jaivin https://groups.google.com/forum/#!topic/kivy-users/xTcDcm2eKEE
 
 # Declare the screens
 class MenuScreen(Screen):

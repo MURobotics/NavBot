@@ -21,7 +21,6 @@
                 padding: [30,30,30,0]
                 size_hint: 1,.3
                 size_hint_max: None, 175
-
                 Image:
                     source: './Images/logo.jpg'
                     size_hint_x: 0.22
@@ -47,13 +46,16 @@
                     font_size: 40
                     halign: 'left'
                     color: 0,0,0,1
-                TextInput:
+                LimitInput:
                     id: search
                     hint_text: 'Enter a Room'
                     multiline: False
                     size_hint: 1,None
                     height: 55
-                    on_text: root.renderRooms()
+                    on_text:
+                        root.renderRooms()
+                        self.readonly = True if len(self.text.strip()) == 6 else False
+                        # Credit to user Jaivin https://groups.google.com/forum/#!topic/kivy-users/xTcDcm2eKEE
             BoxLayout:
                 size_hint: 1,.6
                 padding: [30,0,30,10]
