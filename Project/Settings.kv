@@ -45,7 +45,7 @@
                 #outline_color: 0,0,0 Was attempting to add a border to the label... it did not go as planned
                 #outline_width: 1
                 on_press:
-                    root.manager.transition.direction = 'left'
+                    root.manager.transition.direction = 'right'
                     root.manager.current = 'menu'
             HSeparator
             Button:
@@ -57,9 +57,12 @@
                 background_color: 0,0,0,0
                 color: 0,0,0,1
             Button:
-                text: ''
+                text: 'Feedback'
                 background_color: 0,0,0,0
                 color: 0,0,0,1
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'feedback'
             Button:
                 text: ''
                 background_color: 0,0,0,0

@@ -15,6 +15,7 @@ Builder.load_file('Template.kv')
 Builder.load_file('Map.kv')
 Builder.load_file('Settings.kv')
 Builder.load_file('suspend.kv')
+Builder.load_file('feedback.kv')
 Config.set('kivy', 'keyboard_mode', 'systemandmulti')
 
 class LocationOption(Button):
@@ -49,6 +50,22 @@ class SettingsScreen(Screen):
 
     pass
 
+class FeedBackScreen(Screen):
+    userfeedback = ObjectProperty(None)
+
+    #Writes user feedback to at textfile
+    def btn(self):
+        userString = self.userfeedback.text
+        if(userString != ''):
+            f = open("./Feedback/feedback.txt","a")
+            f.write(userString + "\n")
+            f.close()
+
+    def changeSettings(self):
+        print('Settings Changed')
+
+
+
 class SuspensionScreen(Screen):
 
     def changeSettings(self):
@@ -60,6 +77,7 @@ class SuspensionScreen(Screen):
 sm = ScreenManager()
 sm.add_widget(MenuScreen(name='menu'))
 sm.add_widget(SettingsScreen(name='settings'))
+sm.add_widget(FeedBackScreen(name='feedback'))
 sm.add_widget(SuspensionScreen(name='suspend'))
 sm.current = 'menu'
 

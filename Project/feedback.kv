@@ -1,0 +1,35 @@
+<Button>:
+    font_size: 40
+
+
+<FeedBackScreen>:
+    userfeedback:userfeedback
+
+    Label:
+        text: 'We would love to see your feedback!'
+        font_size: 30
+        pos_hint: {"x":0.2,"top":0.9}
+        size_hint: 0.6, 0.1
+
+    TextInput:
+        id: userfeedback
+        multiline: False
+        pos_hint: {"x":0.2,"top":0.8}
+        size_hint: 0.6, 0.5
+
+    Button:
+        pos_hint: {"x":0.1,"top":0.1}
+        text: 'Settings'
+        size_hint: 0.2, 0.1
+        on_press:
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'settings'
+
+    Button:
+        pos_hint: {"x":0.7,"top":0.1}
+        size_hint: 0.2, 0.1
+        text: 'Submit'
+        on_press:
+            root.btn()
+            root.manager.transition.direction = 'left'
+            root.manager.current = 'settings'
