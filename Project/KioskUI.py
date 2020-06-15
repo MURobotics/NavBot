@@ -23,7 +23,7 @@ class MenuScreen(Screen):
     def __init__(self, **kwargs):
         self.name = 'home'
         super(Screen, self).__init__(**kwargs)
-        self.renderRooms('Null')
+        self.renderRooms()
 
     pass
 
@@ -31,7 +31,8 @@ class MenuScreen(Screen):
         print('Screen Call')
         #This function won't execute much, but will call the connection.py classes to get relevant info and then probably a navigation.py for running navigation to the destination
 
-    def renderRooms(self, search):
+    def renderRooms(self):
+        self.renderLoc.clear_widgets()
         for i in range(1, 20):
             temp = LocationOption()
             self.renderLoc.add_widget(LocationOption(text='TEST: '+str(i)))
