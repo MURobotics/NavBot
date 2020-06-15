@@ -1,47 +1,79 @@
+<Separator@Widget>:
+    canvas:
+        Color:
+            rgba: 0, 0, 0, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<VSeparator@Separator>:
+    size_hint_x: None
+    width: dp(2)
+
+<HSeparator@Separator>:
+    size_hint_y: None
+    height: dp(2)
+#https://gist.github.com/kived/3f6a638fc4827957f933463954524de5 code for separators taken from here
 
 <SettingsScreen>:
     BackgroundBoxLayout:
         size_hint: 1,1
         background_color: 1,1,1,1
         BackgroundLabel:
-            text: 'Settings'
             background_color: 0.9411,0.498,0.0470,1
+    BoxLayout:
+        orientation: 'horizontal'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                halign: 'center'
+                text: 'About:\nThis robot was created by the Mizzou Robotics club to help navigate first floor of Laffrre Hall'
+            Label:
+                halign: 'center'
+                text: 'Contact us at: (INSERT EMAIL HERE'
+        VSeparator
         BoxLayout:
             orientation: 'vertical'
             size_hint: 1,1
             size_hint_max: 600, 300
+            HSeparator
             Button:
-                text: 'Back to menu ->'
-                background_color: 0,0,0,0
+                text: 'Back to Navigation ->'
+                background_normal: ''
+                background_color: 1,1,1,1
                 color: 0,0,0,1
+                #outline_color: 0,0,0 Was attempting to add a border to the label... it did not go as planned
+                #outline_width: 1
                 on_press:
                     root.manager.transition.direction = 'left'
                     root.manager.current = 'menu'
+            HSeparator
             Button:
-                text: 'Test Function Call'
-                background_color: 0,0,0,0
-                color: 0,0,0,1
-                on_press: root.changeSettings()
-            Button:
-                text: 'My settings button'
+                text: ''
                 background_color: 0,0,0,0
                 color: 0,0,0,1
             Button:
-                text: 'My settings button'
+                text: ''
                 background_color: 0,0,0,0
                 color: 0,0,0,1
             Button:
-                text: 'My settings button'
+                text: ''
                 background_color: 0,0,0,0
                 color: 0,0,0,1
             Button:
-                text: 'My settings button'
+                text: ''
                 background_color: 0,0,0,0
                 color: 0,0,0,1
             Button:
-                text: 'Shutdown'
+                text: ''
+                background_color: 0,0,0,0
+                color: 0,0,0,1
+            HSeparator
+            Button:
+                text: 'Suspend'
                 background_normal: ''
                 background_color: .9,0,0,1
                 on_press:
-                    text:"Exit"
-                    on_press: app.stop()
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'suspend'
+            HSeparator

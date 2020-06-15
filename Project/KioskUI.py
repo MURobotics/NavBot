@@ -14,6 +14,7 @@ kivy.require('1.11.1')
 Builder.load_file('Template.kv')
 Builder.load_file('Map.kv')
 Builder.load_file('Settings.kv')
+Builder.load_file('suspend.kv')
 Config.set('kivy', 'keyboard_mode', 'systemandmulti')
 
 class LocationOption(Button):
@@ -48,10 +49,18 @@ class SettingsScreen(Screen):
 
     pass
 
+class SuspensionScreen(Screen):
+
+    def changeSettings(self):
+        print('Settings Changed')
+
+    pass
+
 
 sm = ScreenManager()
 sm.add_widget(MenuScreen(name='menu'))
 sm.add_widget(SettingsScreen(name='settings'))
+sm.add_widget(SuspensionScreen(name='suspend'))
 sm.current = 'menu'
 
 
