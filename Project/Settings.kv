@@ -1,4 +1,3 @@
-
 <SettingsScreen>:
     BackgroundBoxLayout:
         size_hint: 1,1
@@ -14,7 +13,8 @@
                 text: 'Back to menu ->'
                 background_color: 0,0,0,0
                 color: 0,0,0,1
-                on_press:
+                on_release:
+                    app.root.transition = SlideTransition()
                     root.manager.transition.direction = 'left'
                     root.manager.current = 'menu'
             Button:

@@ -54,7 +54,7 @@
                     height: 55
                     on_text:
                         root.renderRooms()
-                        self.readonly = True if len(self.text.strip()) == 6 else False
+                        self.readonly = True if len(self.text) == 6 else False
                         # Credit to user Jaivin https://groups.google.com/forum/#!topic/kivy-users/xTcDcm2eKEE
             BoxLayout:
                 size_hint: 1,.6
@@ -73,8 +73,12 @@
                     text: 'Go'
                     background_normal: ''
                     color: 1,1,1,1
-                    background_color: 0.9411,0.498,0.0470,1
-                    on_press: root.navigationTest()
+                    background_color: 0.9611,0.448,0.0070,1
+                    on_press:
+                        root.navigationTest()
+                    on_release:
+                        app.root.transition = NoTransition()
+                        app.root.current = 'Suspend'
     AnchorLayout:
         anchor_x: 'right'
         anchor_y: 'top'
@@ -86,6 +90,7 @@
             width: 50
             height: 50
             border: (0, 0, 0, 0)
-            on_press:
+            on_release:
+                app.root.transition = SlideTransition()
                 root.manager.transition.direction = 'right'
                 root.manager.current = 'settings'

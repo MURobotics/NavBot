@@ -6,18 +6,19 @@ from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 from kivy.uix.widget import Widget
 from kivy.properties import ListProperty, ObjectProperty
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import (ScreenManager, Screen)
 from kivy.uix.vkeyboard import VKeyboard
 from kivy.config import Config
+import Alert as AlertClass
 
 kivy.require('1.11.1')
 
 Builder.load_file('Template.kv')
 Builder.load_file('Map.kv')
 Builder.load_file('Settings.kv')
+Builder.load_file('Alerts.kv')
 Config.set('kivy', 'keyboard_mode', 'systemandmulti')
 Config.write()
-
 
 class LocationOption(Button):
     pass
@@ -58,10 +59,13 @@ class SettingsScreen(Screen):
 
     pass
 
-
 sm = ScreenManager()
 sm.add_widget(MenuScreen(name='menu'))
 sm.add_widget(SettingsScreen(name='settings'))
+sm.add_widget(AlertClass.Suspend(name='Suspend'))
+sm.add_widget(AlertClass.LowPower(name='LowPower'))
+sm.add_widget(AlertClass.Error(name='Error'))
+sm.add_widget(AlertClass.Success(name='Success'))
 sm.current = 'menu'
 
 
