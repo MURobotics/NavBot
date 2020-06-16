@@ -56,13 +56,16 @@
                 text: ''
                 background_color: 0,0,0,0
                 color: 0,0,0,1
+            HSeparator
             Button:
                 text: 'Feedback'
-                background_color: 0,0,0,0
+                background_normal: ''
+                background_color: 1,1,1,1
                 color: 0,0,0,1
                 on_press:
                     root.manager.transition.direction = 'right'
                     root.manager.current = 'feedback'
+            HSeparator
             Button:
                 text: ''
                 background_color: 0,0,0,0
