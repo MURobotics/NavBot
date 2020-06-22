@@ -9,6 +9,8 @@ from kivy.properties import ListProperty, ObjectProperty
 from kivy.uix.screenmanager import (ScreenManager, Screen)
 from kivy.uix.vkeyboard import VKeyboard
 from kivy.config import Config
+from kivy.core.window import Window
+from kivy.animation import Animation
 import Alert as AlertClass
 
 kivy.require('1.11.1')
@@ -23,8 +25,11 @@ Config.write()
 class LocationOption(Button):
     pass
 
-class Test(VKeyboard):
-    player = VKeyboard()
+class KeyboardV(VKeyboard):
+    def place(self):
+        self.center_ = Window.center_x
+        self.top = 0
+        Animation(y=100, t='out_elastic', d=.4).start(self)
 
 class LimitInput(TextInput):
     def keyboard_on_key_up(self, keycode, text):
@@ -72,3 +77,8 @@ sm.current = 'menu'
 class Menu(App):
     def build(self):
         return sm
+    def get_keyboard(self, **kwargs):
+        kb = KeyboardV(**kwargs)
+        return kb
+
+Window.set_vkeyboard_class(Menu.get_keyboard(VKeyboard))
