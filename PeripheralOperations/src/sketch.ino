@@ -11,8 +11,6 @@
 
 ros::NodeHandle nh;
 
-nh.getHardware()->setBaud(9600)
-
 std_msgs::String str_msg;
 ros::Publisher chatter("chatter", &str_msg);
 
@@ -20,7 +18,9 @@ char hello[13] = "hello world!";
 
 void setup()
 {
+  nh.getHardware()->setBaud(9600);
   nh.initNode();
+  //nh.getHardware()->setBaud(9600);
   nh.advertise(chatter);
 }
 
@@ -30,4 +30,5 @@ void loop()
   chatter.publish( &str_msg );
   nh.spinOnce();
   delay(1000);
+  Serial.print("test");
 }
