@@ -9,9 +9,9 @@
 #include <ros.h>
 #include <std_msgs/String.h>
 
-nh.getHardware()->setBaud(9600)
-
 ros::NodeHandle nh;
+
+nh.getHardware()->setBaud(9600)
 
 std_msgs::String str_msg;
 ros::Publisher chatter("chatter", &str_msg);
