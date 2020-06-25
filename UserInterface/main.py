@@ -1,6 +1,5 @@
-#main program
 #!/usr/bin/env python3
-import rospys
+import rospy
 import KioskUI as ui
 
 def main():
