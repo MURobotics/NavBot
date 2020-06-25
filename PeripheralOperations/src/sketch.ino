@@ -1,3 +1,6 @@
+#include <ros.h>
+#include <std_msgs/String.h>
+
 int ledPin = LED_BUILTIN;
 
 void setup(){
