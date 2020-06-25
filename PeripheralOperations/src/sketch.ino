@@ -7,7 +7,7 @@
 //#define USE_USBCON
 
 #include <ros.h>
-#include <std_msgs>
+#include <std_msgs/String.h>
 
 ros::NodeHandle nh;
 
