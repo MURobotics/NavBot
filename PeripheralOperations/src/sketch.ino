@@ -1,34 +1,36 @@
 /*
- * rosserial Publisher Example
- * Prints "hello world!"
+ * rosserial::std_msgs::Float64 Test
+ * Receives a Float64 input, subtracts 1.0, and publishes it
  */
 
-// Use the following line if you have a Leonardo or MKR1000
-//#define USE_USBCON
-
 #include <ros.h>
-#include <std_msgs/String.h>
+#include <std_msgs/Float64.h>
+
+float x;
 
 ros::NodeHandle nh;
 
-std_msgs::String str_msg;
-ros::Publisher chatter("chatter", &str_msg);
+ROS_CALLBACK(messageCb, std_msgs::Float64, msg)
+  x = msg.data - 1.0;
+  digitalWrite(13, HIGH-digitalRead(13));   // blink the led
+}
 
-char hello[13] = "hello world!";
+std_msgs::Float64 test;
+ros::Subscriber s("your_topic", &msg, &messageCb);
+ros::Publisher p("my_topic", &test);
 
 void setup()
 {
-  nh.getHardware()->setBaud(9600);
+  pinMode(13, OUTPUT);
   nh.initNode();
-  //nh.getHardware()->setBaud(9600);
-  nh.advertise(chatter);
+  nh.advertise(p);
+  nh.subscribe(s);
 }
 
 void loop()
 {
-  str_msg.data = hello;
-  chatter.publish( &str_msg );
+  test.data = x;
+  p.publish( &test );
   nh.spinOnce();
-  delay(1000);
-  Serial.print("test");
+  delay(10);
 }
