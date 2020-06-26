@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.8396349367751961 0.4688217279323926 0.2742614817377722 0.9237973869581936
-  position 0.20450782835794096 0.5100936631024575 0.2929274829148407
+  orientation -0.9968025833417432 0.008926990654319527 -0.07940351806491054 0.7183263405221575
+  position 0.026679227150190568 0.5238097158609973 0.44626721587694784
 }
 TexturedBackground {
 }
@@ -23,10 +23,11 @@ Robot {
           device [
             RotationalMotor {
               name "wheel1"
+              acceleration 0
             }
           ]
           endPoint Solid {
-            translation 0.04999999999999991 1.81802e-07 0.04000000266020092
+            translation 0.05 1.81802e-07 0.04
             rotation -6.255693872693552e-08 -3.947854551184206e-09 0.999999999999998 1.5707999999999998
             children [
               Shape {
@@ -54,8 +55,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation -0.05 -1.85518e-07 0.04
-            rotation -6.255693872693552e-08 -3.947854551184206e-09 0.999999999999998 1.5707999999999998
+            translation -0.05 2.7195199999999995e-07 0.04
+            rotation -6.255699390677672e-08 -3.94780012745117e-09 0.9999999999999979 1.5707999999905076
             children [
               Shape {
                 appearance DEF NAV_WHEEL_VIS PBRAppearance {
@@ -82,8 +83,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation -0.05 -1.90792e-07 -0.05
-            rotation -6.255693872693552e-08 -3.947854551184206e-09 0.999999999999998 1.5707999999999998
+            translation -0.05 1.60198e-07 -0.05
+            rotation -6.255670574759505e-08 -3.948089909607327e-09 0.999999999999998 1.5707999999989037
             children [
               Shape {
                 appearance DEF NAV_WHEEL_VIS PBRAppearance {
@@ -110,8 +111,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 0.05 1.76528e-07 -0.05
-            rotation -6.255693872693552e-08 -3.947854551184206e-09 0.999999999999998 1.5707999999999998
+            translation 0.05 5.3936e-07 -0.05
+            rotation -6.255737260059151e-08 -3.947420043106612e-09 0.999999999999998 1.5708000000047468
             children [
               Shape {
                 appearance DEF NAV_WHEEL_VIS PBRAppearance {
@@ -149,5 +150,5 @@ Robot {
   boundingObject USE NAV_BASE_GEO
   physics Physics {
   }
-  controller ""
+  controller "move_forward_controller"
 }
