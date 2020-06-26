@@ -32,6 +32,7 @@ void messageCb( const std_msgs::Empty& toggle_msg){
 
 void setup()
 {
+  nh.getHardware()->setBaud(9600);
   nh.initNode();
   nh.subscribe(sub);
   nh.advertise(chatter);
