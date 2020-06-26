@@ -1,19 +1,18 @@
-/*
- * rosserial Subscriber Example
- * Blinks an LED on callback
- */
-
 #include <ros.h>
 #include <std_msgs/String.h>
 #include <std_msgs/Empty.h>
 
 void messageCb( const std_msgs::Empty& toggle_msg);
+//creates the prototype for reference by the subscriber
 
 ros::NodeHandle nh;
+//creates the interfacable ros node
 
 std_msgs::String str_msg;
+
 ros::Publisher chatter("output", &str_msg);
 ros::Subscriber<std_msgs::Empty> sub("toggle_chat", &messageCb );
+//deploys the topics to publish and subscribe for communicating
 
 int i = 0;
 char hello[13] = "hello world!";
@@ -29,6 +28,7 @@ void messageCb( const std_msgs::Empty& toggle_msg){
     i = 0;
   }
 }
+//toggle functions called by the 'toggle_chat' topic
 
 void setup()
 {
@@ -37,6 +37,7 @@ void setup()
   nh.subscribe(sub);
   nh.advertise(chatter);
 }
+//posts the topics and creates the nodes with 9600 baud
 
 void loop()
 {
@@ -47,3 +48,4 @@ void loop()
   nh.spinOnce();
   delay(1000);
 }
+//iykyk
