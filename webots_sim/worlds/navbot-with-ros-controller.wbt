@@ -150,5 +150,5 @@ Robot {
   physics Physics {
   }
   controller "ros"
-  controllerArgs "--name=navbot"
+  controllerArgs "--name=navbot --synchronize	"
 }
