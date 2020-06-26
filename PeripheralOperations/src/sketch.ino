@@ -10,7 +10,7 @@ float x;
 
 ros::NodeHandle nh;
 
-ROS_CALLBACK(messageCb, std_msgs::Float64, msg)
+ROS_CALLBACK(messageCb, std_msgs::Float64, msg){
   x = msg.data - 1.0;
   digitalWrite(13, HIGH-digitalRead(13));   // blink the led
 }
