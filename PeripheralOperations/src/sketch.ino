@@ -7,6 +7,8 @@
 #include <std_msgs/String.h>
 #include <std_msgs/Empty.h>
 
+void messageCb( const std_msgs::Empty& toggle_msg);
+
 ros::NodeHandle nh;
 
 std_msgs::String str_msg;
