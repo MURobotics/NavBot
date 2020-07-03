@@ -7,13 +7,19 @@ import math
 from webots_ros.srv import *
 
 time_step = 32
+robot_name = "navbot"
+
+def robot_service_url(robot_name):
+    return "/" + robot_name
+
+robot_base_url = robot_service_url(robot_name)
 
 def move_robot():
 
     wheels = ["wheel1", "wheel2", "wheel3", "wheel4"]
 
     for wheel in wheels:
-        base_endpoint = "/navbot/" + wheel
+        base_endpoint = robot_base_url + "/" + wheel
 
         position_service_name = base_endpoint + "/set_position"
         velocity_service_name = base_endpoint + "/set_velocity"
@@ -24,12 +30,12 @@ def move_robot():
         try:
             position = set_position(math.inf)
             velocity = set_velocity(1.0)
-            
+
         except rospy.ServiceException as exc:
             print("Service did not process request: " + str(exc))
 
 def apply_timestep(time_step):
-    timestep_service_endpoint = "/navbot/robot/time_step"
+    timestep_service_endpoint = robot_base_url + "/robot/time_step"
     timestep = rospy.ServiceProxy(timestep_service_endpoint, set_int)
 
     try:

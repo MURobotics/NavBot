@@ -1,0 +1,153 @@
+#VRML_OBJ R2020a utf8
+Robot {
+  translation 0 0.14 0
+  children [
+    Lidar {
+      translation 0 0.02 0
+      rotation 0 1 0 3.14
+      name "navbot_lidar"
+      rotationStep 0.1
+      tiltAngle 0.1
+      fieldOfView 1.57
+      maxRange 2
+      type "rotating"
+      rotatingHead Solid {
+      }
+    }
+    DEF NAV_WHEELS Group {
+      children [
+        DEF WHEEL_1 HingeJoint {
+          jointParameters HingeJointParameters {
+            anchor 0.04999999999999991 1.81802e-07 0.04000000266020092
+          }
+          device [
+            RotationalMotor {
+              name "wheel1"
+            }
+          ]
+          endPoint Solid {
+            translation 0.04999936399355584 -9.823519980097172e-05 0.039999024451475455
+            rotation -6.340432707475571e-08 -4.795217981080835e-09 0.9999999999999979 1.5707999872866214
+            children [
+              Shape {
+                appearance DEF NAV_WHEEL_VIS PBRAppearance {
+                }
+                geometry DEF NAV_WHEEL_GEO Cylinder {
+                  height 0.01
+                  radius 0.02
+                }
+              }
+            ]
+            name "wheel1"
+            boundingObject USE NAV_WHEEL_GEO
+            physics Physics {
+            }
+          }
+        }
+        DEF WHEEL_2 HingeJoint {
+          jointParameters HingeJointParameters {
+            anchor -0.05 -1.85518e-07 0.04
+          }
+          device [
+            RotationalMotor {
+              name "wheel2"
+            }
+          ]
+          endPoint Solid {
+            translation -0.049999845514090736 -9.807261214585003e-05 0.040003651604020043
+            rotation -0.019286300586557992 0.01928628422332984 0.9996279697220071 1.5711721096294293
+            children [
+              Shape {
+                appearance DEF NAV_WHEEL_VIS PBRAppearance {
+                }
+                geometry DEF NAV_WHEEL_GEO Cylinder {
+                  height 0.01
+                  radius 0.02
+                }
+              }
+            ]
+            name "wheel1(1)"
+            boundingObject USE NAV_WHEEL_GEO
+            physics Physics {
+            }
+          }
+        }
+        DEF WHEEL_3 HingeJoint {
+          jointParameters HingeJointParameters {
+            anchor -0.05 -1.90792e-07 -0.05
+          }
+          device [
+            RotationalMotor {
+              name "wheel3"
+            }
+          ]
+          endPoint Solid {
+            translation -0.049999759237830094 -9.793019488500967e-05 -0.049995687621202434
+            rotation -0.019286301799602355 0.01928628326927405 0.9996279697170104 1.571172110345209
+            children [
+              Shape {
+                appearance DEF NAV_WHEEL_VIS PBRAppearance {
+                }
+                geometry DEF NAV_WHEEL_GEO Cylinder {
+                  height 0.01
+                  radius 0.02
+                }
+              }
+            ]
+            name "wheel1(2)"
+            boundingObject USE NAV_WHEEL_GEO
+            physics Physics {
+            }
+          }
+        }
+        DEF WHEEL_4 HingeJoint {
+          jointParameters HingeJointParameters {
+            anchor 0.05 1.76528e-07 -0.05
+          }
+          device [
+            RotationalMotor {
+              name "wheel4"
+            }
+          ]
+          endPoint Solid {
+            translation 0.050000240766498366 -9.755584000826764e-05 -0.049995692649876196
+            rotation -0.01928630171139783 0.01928628318115241 0.9996279697204122 1.571172110347712
+            children [
+              Shape {
+                appearance DEF NAV_WHEEL_VIS PBRAppearance {
+                }
+                geometry DEF NAV_WHEEL_GEO Cylinder {
+                  height 0.01
+                  radius 0.02
+                }
+              }
+            ]
+            name "wheel1(3)"
+            boundingObject USE NAV_WHEEL_GEO
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+    DEF NAV_BASE Solid {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            metalness 0
+          }
+          geometry DEF NAV_BASE_GEO Box {
+            size 0.1 0.01 0.1
+          }
+        }
+      ]
+    }
+  ]
+  name "navbot_kiosk"
+  model "model-v1"
+  boundingObject USE NAV_BASE_GEO
+  physics Physics {
+  }
+  controller "move_forward_controller"
+}
