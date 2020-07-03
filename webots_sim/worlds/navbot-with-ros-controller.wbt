@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.22258478866263287 0.9498212982780618 0.21976240168278988 1.7081309550578734
-  position 1.8354045670909376 1.065503489222794 -0.019237729161506616
+  orientation -0.750797425440701 0.6600156796231971 0.026125248384358302 0.8764319768440593
+  position 0.9696740639167015 1.1297545657722132 1.2036641376011732
 }
 TexturedBackground {
 }
@@ -11,8 +11,11 @@ TexturedBackgroundLight {
 }
 RectangleArena {
 }
+CardboardBox {
+  translation 0 0.05 -0.24
+  size 0.1 0.1 0.1
+}
 NavBot {
-  translation 0 0.07 0
   controller "ros"
-  controllerArgs "--name=navbot --synchronize"
+  controllerArgs "--name=\"navbot\" "
 }

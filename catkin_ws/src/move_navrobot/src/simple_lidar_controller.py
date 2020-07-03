@@ -15,8 +15,9 @@ def robot_init():
     rospy.init_node('navrobot')
     print("Node running...")
 
-    Navbot = RobotModel("navbot", wheels = ["wheel1", "wheel2", "wheel3", "wheel4"])
-
+    Navbot = RobotModel("navbot", wheels = ["wheel1", "wheel2", "wheel3", "wheel4"], lidar_name="navbot_lidar")
+    Navbot.Lidar.enable_lidar(time_step)
+    Navbot.Lidar.enable_point_cloud()
 
     rate = rospy.Rate(30)
     while not rospy.is_shutdown():

@@ -1,0 +1,11 @@
+Webots Proto Cache File version 1.4
+protoFileHash: bb069355bc8c820a80aa307b5a6ac04d
+containsDevices: 1
+baseType: Lidar
+slotType: 
+parameters: translation,name
+tags: 
+license: 
+licenseUrl: 
+documentationUrl: 
+info: 

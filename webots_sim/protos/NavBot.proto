@@ -1,23 +1,15 @@
 PROTO NavBot [
-  field SFVec3f translation 0 0 0
+  field SFVec3f translation 0 0.02 0
   field SFString controller      "move_forward_controller"   # any string
   field SFString controllerArgs  ""       # any string
+  field SFString robotName       "navbot"
 ]
 {
   Robot {
   translation IS translation
   children [
-    Lidar {
+    NavBot_Lidar {
       translation 0 0.02 0
-      rotation 0 1 0 3.14
-      name "navbot_lidar"
-      rotationStep 0.1
-      tiltAngle 0.1
-      fieldOfView 1.57
-      maxRange 2
-      type "rotating"
-      rotatingHead Solid {
-      }
     }
     DEF NAV_WHEELS Group {
       children [
@@ -149,7 +141,7 @@ PROTO NavBot [
       ]
     }
   ]
-  name "navbot_kiosk"
+  name IS robotName
   model "model-v1"
   boundingObject USE NAV_BASE_GEO
   physics Physics {

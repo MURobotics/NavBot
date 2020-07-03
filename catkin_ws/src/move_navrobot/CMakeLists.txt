@@ -36,6 +36,8 @@ target_link_libraries(robot_navbot_controller
 	${catkin_LIBRARIES}
 )
 
-catkin_install_python(PROGRAMS src/simple_controller.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+catkin_install_python(PROGRAMS
+    src/simple_controller.py
+    src/simple_lidar_controller.py
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
