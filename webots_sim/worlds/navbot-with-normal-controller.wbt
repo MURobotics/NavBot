@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.14884028865554588 0.9875961115715925 0.05000488857705981 1.6747805425633817
-  position 1.153613585598792 0.46713498241747503 -0.09931837647417761
+  orientation -0.4397329728857199 0.8018032083473884 0.4046560609220148 1.8649469620438734
+  position 1.4927023758299571 1.5252765775081698 -0.28545117079297955
 }
 TexturedBackground {
 }
@@ -11,6 +11,21 @@ TexturedBackgroundLight {
 }
 RectangleArena {
 }
-NavBot {
-  translation 0 0.05 0
+DEF NavBot NavBot {
+  translation 0 0.03 0
+  customData "3.00, 3.00, 3.00, 3.00"
+}
+DEF SCREEN_MONITOR Robot {
+  children [
+    Display {
+      name "main_display"
+      width 640
+      height 480
+    }
+  ]
+  name "displayBot"
+  controller "base_display_controller"
+  supervisor TRUE
+}
+Robot {
 }

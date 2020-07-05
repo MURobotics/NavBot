@@ -25,7 +25,7 @@ def robot_init():
         if not Navbot.timestep(time_step):
             break
 
-        Navbot.move_robot(10.0)
+        #Navbot.move_robot(10.0)
         rate.sleep()
 
     print("Disconnected from Robot!")

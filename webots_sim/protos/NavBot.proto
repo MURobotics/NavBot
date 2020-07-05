@@ -3,6 +3,7 @@ PROTO NavBot [
   field SFString controller      "move_forward_controller"   # any string
   field SFString controllerArgs  ""       # any string
   field SFString robotName       "navbot"
+  field SFString customData      ""
 ]
 {
   Robot {
@@ -148,5 +149,6 @@ PROTO NavBot [
   }
   controller IS controller
   controllerArgs IS controllerArgs
+  customData IS customData
 }
 }

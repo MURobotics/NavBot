@@ -14,6 +14,7 @@
 #include <webots/robot.h>
 #include <webots/motor.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <webots/lidar.h>
 
 /*
@@ -56,6 +57,13 @@ void moveMotors(WbDeviceTag * motors) {
   
 }
 
+void stopMotors(WbDeviceTag * motors) {
+  unsigned int c;
+  for (c = 0; c < MOTOR_COUNT; c++){
+    wb_motor_set_velocity(motors[c], 0.0);
+  }
+}
+
 void freeMotors(WbDeviceTag * motors){
   free(motors);
 }
@@ -75,6 +83,21 @@ void freeLidar(WbDeviceTag * lidar){
   free(lidar);
 }
 
+void logWheelData(WbDeviceTag * motors) {
+  float velocities[MOTOR_COUNT];
+  
+  unsigned int c;
+  for (c = 0; c < MOTOR_COUNT; c++) {
+    velocities[c] = wb_motor_get_velocity(motors[c]);
+  }
+  
+  char buf[255];
+  sprintf(buf, "%.2f, %.2f, %.2f, %.2f", velocities[0], velocities[1], velocities[2], velocities[3]);
+  wb_robot_set_custom_data(buf);
+  printf("Loggign data\n");
+}
+
+
  
 int main(int argc, char **argv) {
   /* necessary to initialize webots stuff */
@@ -90,12 +113,17 @@ int main(int argc, char **argv) {
   WbDeviceTag * motors = configureMotors();
   WbDeviceTag * lidarSensor = configureLidar();
 
-  moveMotors(motors);
 
   /* main loop
    * Perform simulation steps of TIME_STEP milliseconds
    * and leave the loop when the simulation is over
    */
+   
+  moveMotors(motors);
+   
+   
+  double counter = 0.0;
+   
   while (wb_robot_step(TIME_STEP) != -1) {
     /*
      * Read the sensors :
@@ -108,6 +136,15 @@ int main(int argc, char **argv) {
      * Enter here functions to send actuator commands, like:
      * wb_motor_set_position(my_actuator, 10.0);
      */
+         
+     logWheelData(motors);
+     counter += TIME_STEP;
+     printf("%.2f\n", counter);
+     
+     if (counter >= 5000) {
+         stopMotors(motors);
+     }
+     
   };
 
   /* Enter your cleanup code here */
