@@ -47,15 +47,40 @@ WbDeviceTag * configureMotors(){
   return motors; 
 }
 
-void moveMotors(WbDeviceTag * motors) {
+void rotMotors(WbDeviceTag * motors) {
 
   unsigned int c;
   for (c = 0; c < MOTOR_COUNT; c++) {
     wb_motor_set_position(motors[c], INFINITY);
-    wb_motor_set_velocity(motors[c], 3.0);
+    
+    int even = !(((c+1) % 2) == 0);
+    
+    double vel = 3.0;
+    
+    if (even){
+      vel = vel * -1;
+    }
+    
+    wb_motor_set_velocity(motors[c], vel);
   }
+
+  
   
 }
+
+void moveMotors(WbDeviceTag * motors) {
+  
+  unsigned int c;
+  for (c = 0; c < MOTOR_COUNT; c++) {
+    wb_motor_set_position(motors[c], INFINITY);
+    
+    
+    double vel = -3.0;
+    
+    wb_motor_set_velocity(motors[c], vel);
+  }
+}
+
 
 void stopMotors(WbDeviceTag * motors) {
   unsigned int c;
@@ -92,9 +117,11 @@ void logWheelData(WbDeviceTag * motors) {
   }
   
   char buf[255];
-  sprintf(buf, "%.2f, %.2f, %.2f, %.2f", velocities[0], velocities[1], velocities[2], velocities[3]);
+  //wheel1 = left wheel4
+  //wheel2 = right wheel3
+  sprintf(buf, "%.2f, %.2f", velocities[0], velocities[1]);
   wb_robot_set_custom_data(buf);
-  printf("Loggign data\n");
+  //printf("Loggign data\n");
 }
 
 
@@ -119,8 +146,9 @@ int main(int argc, char **argv) {
    * and leave the loop when the simulation is over
    */
    
-  moveMotors(motors);
+  rotMotors(motors);
    
+
    
   double counter = 0.0;
    
@@ -139,11 +167,15 @@ int main(int argc, char **argv) {
          
      logWheelData(motors);
      counter += TIME_STEP;
-     printf("%.2f\n", counter);
      
-     if (counter >= 5000) {
+     
+     if (counter >= 7000){
          stopMotors(motors);
+     }else if (counter >= 4500) {
+         stopMotors(motors);
+         moveMotors(motors);
      }
+     
      
   };
 

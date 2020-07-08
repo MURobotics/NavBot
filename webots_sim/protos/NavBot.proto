@@ -70,13 +70,13 @@ PROTO NavBot [
             }
           }
         }
-        DEF WHEEL_3 HingeJoint {
+        DEF WHEEL_4 HingeJoint {
           jointParameters HingeJointParameters {
             anchor -0.05 -1.90792e-07 -0.05
           }
           device [
             RotationalMotor {
-              name "wheel3"
+              name "wheel4"
             }
           ]
           endPoint Solid {
@@ -98,13 +98,13 @@ PROTO NavBot [
             }
           }
         }
-        DEF WHEEL_4 HingeJoint {
+        DEF WHEEL_3 HingeJoint {
           jointParameters HingeJointParameters {
             anchor 0.05 1.76528e-07 -0.05
           }
           device [
             RotationalMotor {
-              name "wheel4"
+              name "wheel3"
             }
           ]
           endPoint Solid {

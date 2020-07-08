@@ -7,6 +7,7 @@
 #  from controller import Robot, Motor, DistanceSensor
 from controller import Robot
 from controller import Supervisor
+import math
 # create the Robot instance.
 robot = Supervisor()
 
@@ -20,25 +21,28 @@ timestep = int(robot.getBasicTimeStep())
 #  ds.enable(timestep)
 
 navbot_ref = robot.getFromDef("NavBot")
-print(navbot_ref)
-
-wheel_ref = robot.getFromDef("WHEEL_1")
-
-print("wheel1")
-print (wheel_ref)
-
 display = robot.getDisplay("main_display")
-print(display)
 
 robot_pos = {
     "x": display.getWidth() // 2,
     "y": display.getHeight() // 2
 }
     
-orientation_vec = {
-    "x": -1,
-    "y": 0
-}
+    
+def rotate_point(point, theta):
+
+    cos = math.cos(theta)
+    sin = math.sin(theta)
+
+    x = point[0]
+    y = point[1]
+
+    new_point = (
+        x * cos - y * sin,
+        x * sin + y * cos
+    )
+
+    return new_point
     
 def grabWheelVel(robot):
     data = robot.getField("customData").getSFString()
@@ -49,46 +53,96 @@ def grabWheelVel(robot):
     
     return res
     
-def drawRobotPos(display, pos):
+angle = math.pi * 2
+
+
+def compute_orientation(angle):
+    return {
+        "x": math.cos(angle),
+        "y": math.sin(angle)
+    }
+    
+orientation_vec = compute_orientation(angle)
+
+def drawRobotPos(display, pos, color):
+    global angle
+    display.setColor(color)
 
     s = 10
-    triangle = [(0,0), (3,2), (3, -2)]
+    
+    triangle = [(-2,0), (1,2), (1, -2)]
 
     x_pos = []
     y_pos = []
 
     for point in triangle:
+        
+        point = rotate_point(point, angle)
+    
         x_pos.append(point[0] * s + pos["x"])
         y_pos.append(point[1] * s + pos["y"])
 
     display.fillPolygon(x_pos, y_pos)
-    
 
+def resetScreen(display, color):
+    display.setColor(color)
+    display.fillRectangle(0,0,display.getWidth(), display.getHeight())
+
+def log_point(point, color):
+    
+    display.setColor(color)
+    display.fillRectangle(point["x"], point["y"], 10,10)
+    
+def log_points(points, color = 0x000000):
+
+    for point in points:
+        log_point(point, color)
+    
+point_log = []
+
+log_counter = 0
+log_elapsed = 500
 
 # Main loop:
 # - perform simulation steps until Webots is stopping the controller
 while robot.step(timestep) != -1:
-    # Read the sensors:
-    # Enter here functions to read sensor data, like:
-    #  val = ds.getValue()
     
-    # Process sensor data here.
-    display.setColor(0x000000)
-    display.fillRectangle(0,0,display.getWidth(), display.getHeight())
+    resetScreen(display, 0x000000)
     
-    display.setColor(0xFF0000)
-    drawRobotPos(display, robot_pos)
+    
+    log_points(point_log, 0xFFFFFF)
+    drawRobotPos(display, robot_pos, 0xFF0000)
+    
+    
     vel = grabWheelVel(navbot_ref)
     
-    overall_vel = vel[0] * 0.5
+    if (vel[0] == vel[1]):
+        overall_vel = vel[0] * 1
+        print(orientation_vec)
+        robot_pos["x"] += int(overall_vel * orientation_vec["x"])
+        robot_pos["y"] += int(overall_vel * orientation_vec["y"])
+        
+    elif (vel[0] == -vel[1]):
+        
+        # magical number pls remove
+        coefficient = (1/100) * 0.9
+        angle += vel[0] * coefficient
     
-    robot_pos["x"] += int(overall_vel * orientation_vec["x"])
-    robot_pos["y"] += int(overall_vel * orientation_vec["y"])
-    
-    # Enter here functions to send actuator commands, like:
-    #  motor.setPosition(10.0)
+        orientation_vec = compute_orientation(angle)
     
     
-    pass
-
+    if (log_counter >= log_elapsed):
+            
+        new_point = {
+            "x": robot_pos["x"],
+            "y": robot_pos["y"]
+        }
+        
+        point_log.append(new_point)
+        
+        log_counter = 0
+    
+    
+    log_counter += timestep
+    
 # Enter here exit cleanup code.
