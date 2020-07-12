@@ -168,12 +168,18 @@ int main(int argc, char **argv) {
      logWheelData(motors);
      counter += TIME_STEP;
      
-     
-     if (counter >= 7000){
-         stopMotors(motors);
-     }else if (counter >= 4500) {
-         stopMotors(motors);
-         moveMotors(motors);
+     if (counter >= 9000) {
+       stopMotors(motors);
+       rotMotors(motors);
+     }else if (counter >= 7000) {
+       stopMotors(motors);
+       moveMotors(motors);
+     }else if (counter >= 5000){
+       stopMotors(motors);
+       rotMotors(motors);
+     }else if (counter >= 3900){
+       stopMotors(motors);
+       moveMotors(motors);
      }
      
      
