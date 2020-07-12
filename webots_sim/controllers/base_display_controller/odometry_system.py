@@ -8,6 +8,19 @@ Wheel vel is in Radians/Sec
 
 from geometry_util import *
 
+def computeLinearVelocity(angular_velocity, radius):
+    return angular_velocity * radius
+
+def computeChangeInPosition(linear_velocity, delta_time):
+    return linear_velocity * delta_time
+
+def computeAngularVelocity(tangential_velocity, radius):
+    return tangential_velocity / radius
+
+def computeChangeInAngle(angular_velocity, delta_time):
+    return angular_velocity * delta_time
+
+
 class TwoWheelOdometry():
 
     def __init__(self, wheel_radius, chassis_distance):
@@ -82,15 +95,3 @@ class TwoWheelOdometry():
         )
 
         return position_delta_in_direction
-
-def computeLinearVelocity(angular_velocity, radius):
-    return angular_velocity * radius
-
-def computeChangeInPosition(linear_velocity, delta_time):
-    return linear_velocity * delta_time
-
-def computeAngularVelocity(tangential_velocity, radius):
-    return tangential_velocity / radius
-
-def computeChangeInAngle(angular_velocity, delta_time):
-    return angular_velocity * delta_time
