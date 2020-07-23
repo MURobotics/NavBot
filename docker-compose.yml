@@ -1,0 +1,75 @@
+version: '3'
+
+services:
+
+  master_node:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./MasterNode
+    environment:
+      - "PYTHONUNBUFFERED=3"
+    networks:
+      - cluster
+    links:
+      - central_logic
+      - gui
+      - motor_api
+      - ocular
+      - navigation
+
+  central_logic:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./Central_Logic
+    environment:
+      - "PYTHONUNBUFFERED=3"
+    networks:
+      - cluster
+
+  gui:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./Gui
+    environment:
+      - "PYTHONUNBUFFERED=3"
+    ports:
+      - 5900:5900
+    networks:
+      - cluster
+    privileged: true
+
+  motor_api:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./MotorAPI
+    environment:
+      - "PYTHONUNBUFFERED=3"
+    networks:
+      - cluster
+
+  navigation:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./Navigation
+    environment:
+      - "PYTHONUNBUFFERED=3"
+    networks:
+      - cluster
+
+  ocular:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./Ocular
+    environment:
+      - "PYTHONUNBUFFERED=3"
+    networks:
+      - cluster
+
+volumes:
+  project:
+    driver: local
+
+networks:
+  cluster:
+    driver: "bridge"
