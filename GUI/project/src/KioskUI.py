@@ -9,7 +9,12 @@ from kivy.properties import ListProperty, ObjectProperty
 from kivy.uix.screenmanager import (ScreenManager, Screen)
 from kivy.uix.vkeyboard import VKeyboard
 from kivy.config import Config
+
 import Alert as AlertClass
+from Connect import RosNode
+
+RN = RosNode()
+RN.toggle()
 
 kivy.require('1.11.1')
 
@@ -56,6 +61,7 @@ class SettingsScreen(Screen):
 
     def changeSettings(self):
         print('Settings Changed')
+        RN.toggle()
 
     pass
 

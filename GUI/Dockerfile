@@ -1,41 +1,5 @@
 FROM ros:melodic-ros-base
 
-# install kivy dependencies
-RUN apt-get update && apt-get install -y \
-    python-pip \
-    build-essential \
-    git \
-    python \
-    python-dev \
-    ffmpeg \
-    libsdl2-dev \
-    libsdl2-image-dev \
-    libsdl2-mixer-dev \
-    libsdl2-ttf-dev \
-    libportmidi-dev \
-    libswscale-dev \
-    libavformat-dev \
-    libavcodec-dev \
-    zlib1g-dev
-
-# install audio and video kivy dependencies
-RUN apt-get install -y \
-    libgstreamer1.0 \
-    gstreamer1.0-plugins-base \
-    gstreamer1.0-plugins-good
-
-# install kivy for python 3
-RUN apt-get update && apt-get install -y software-properties-common && \
-    add-apt-repository ppa:kivy-team/kivy && \
-    apt-get update && \
-    sudo apt-get install -y python3-kivy
-
-# install vnc server
-RUN apt-get update && apt-get install -y \
-  x11vnc \
-  xvfb && \
-  mkdir ~/.vnc
-
 # install build tools
 RUN apt-get update && apt-get install -y \
       python-catkin-tools \
@@ -74,14 +38,50 @@ RUN catkin config \
   catkin build \
     project
 
+# install kivy dependencies
+RUN apt-get update && apt-get install -y \
+    python-pip \
+    build-essential \
+    git \
+    python \
+    python-dev \
+    ffmpeg \
+    libsdl2-dev \
+    libsdl2-image-dev \
+    libsdl2-mixer-dev \
+    libsdl2-ttf-dev \
+    libportmidi-dev \
+    libswscale-dev \
+    libavformat-dev \
+    libavcodec-dev \
+    zlib1g-dev
+
+# install audio and video kivy dependencies
+RUN apt-get install -y \
+    libgstreamer1.0 \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-good
+
+# install kivy for python 3
+RUN apt-get update && apt-get install -y software-properties-common && \
+    add-apt-repository ppa:kivy-team/kivy && \
+    apt-get update && \
+    sudo apt-get install -y python3-kivy
+
+# install vnc server
+RUN apt-get update && apt-get install -y \
+  x11vnc \
+  xvfb && \
+  mkdir ~/.vnc
+
+# append vnc server command to setup.bash
+RUN echo 'x11vnc -forever -create' >> $ROS_WS/devel/setup.bash
+
 # source ros package from entrypoint
 RUN echo 'export ROS_MASTER_URI=http://master_node:11311' >> $ROS_WS/devel/setup.bash && \
     sed --in-place --expression \
     '$isource "$ROS_WS/devel/setup.bash"' \
     /ros_entrypoint.sh
-
-# append vnc server command to setup.bash
-RUN echo 'x11vnc -forever -create' >> $ROS_WS/devel/setup.bash
 
 CMD ["rosrun","project","main.py"]
 
