@@ -80,9 +80,9 @@ RUN echo 'export ROS_MASTER_URI=http://master_node:11311' >> $ROS_WS/devel/setup
     '$isource "$ROS_WS/devel/setup.bash"' \
     /ros_entrypoint.sh
 
-# append vnc server command to setup.bash
-RUN echo 'x11vnc -forever -create' >> $ROS_WS/devel/setup.bash
+ENV DISPLAY :0
 
-CMD ["rosrun","project","main.py"]
+# append vnc server command to setup.bash
+RUN echo 'x11vnc -display :0 -forever -create' >> $ROS_WS/devel/setup.bash
 
 #https://answers.ros.org/question/312577/catkin_make-command-not-found-executing-by-a-dockerfile/ ruffsl is a saint

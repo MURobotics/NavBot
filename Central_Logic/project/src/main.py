@@ -25,7 +25,10 @@ def listener():
 
     rospy.Subscriber('GuiToCen', String, receivingInfo)
     # spin() simply keeps python from exiting until this node is stopped
+
     rospy.spin()
+
+
 
 if __name__ == '__main__':
     listener()
