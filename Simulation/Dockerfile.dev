@@ -1,0 +1,36 @@
+FROM cyberbotics/webots:R2019b-rev1
+
+RUN apt-get update && apt-get install -y \
+    nano \
+    psmisc \
+    python-pip
+
+RUN python -m pip install \
+    websocket-client \
+    tornado nvidia-ml-py \
+    psutil \
+    requests \
+    tornado \
+    websocket-client \
+    nvidia-ml-py3 \
+    psutil \
+    requests
+
+ENV AUDIODEV=null
+ENV DEBIAN_FRONTEND=noninteractive
+ENV DISPLAY=:99
+ENV LIBGL_ALWAYS_SOFTWARE=true
+ENV WEBOTS_HOME=/root/webots
+ENV QTWEBENGINE_DISABLE_SANDBOX=1
+
+ADD server.sh /root/server.sh
+
+COPY Project /root/webots/Basic
+
+COPY Project/session/local.json /root/webots/resources/web/server/config/session/local.json
+
+COPY Project/simulation/local.json /root/webots/resources/web/server/config/simulation/local.json
+
+RUN chmod 654 /root/server.sh
+
+CMD ["/root/server.sh", ""]

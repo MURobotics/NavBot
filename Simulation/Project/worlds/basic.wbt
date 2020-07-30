@@ -1,0 +1,140 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.07614181327486236 0.9801285577081589 0.18316777728667258 2.334312770678801
+  position 0.7120963126376413 0.44669446315603867 -0.6808522256246338
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+WoodenBox {
+  translation -0.41363 0.0995716 0.3971
+  rotation -0.04773978777205483 -0.047576370643615806 0.9977261155346494 1.5723560675065062
+  name "wooden box(2)"
+  size 0.2 0.2 0.2
+  mass 1
+}
+WoodenBox {
+  translation 0.429656 0.0996647 0.438349
+  rotation -0.025385238466472358 -2.7888435015751785e-05 0.9996777425201763 -3.1408899253752067
+  size 0.2 0.2 0.2
+  mass 1
+}
+WoodenBox {
+  translation -0.229876 0.0996075 -0.570245
+  rotation 1.4090581072172806e-07 1.4179365709758516e-07 0.99999999999998 1.5707963203021056
+  name "wooden box(1)"
+  size 0.2 0.2 0.2
+  mass 1
+}
+E-puck {
+  name "mainBOT"
+  controller "<extern>"
+}
+Floor {
+  size 2 2
+  tileSize 0.25 0.25
+}
+DEF Wallz Solid {
+  translation 0 0.05 -1
+  children [
+    DEF wall Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 2.1 0.1 0.05
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE wall
+  locked TRUE
+}
+DEF Wallz Solid {
+  translation 0 0.05 1.02
+  children [
+    DEF wall Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 2.1 0.1 0.05
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE wall
+  locked TRUE
+}
+DEF Wallz Solid {
+  translation 1.03 0.05 0.0299969
+  rotation 0 1 0 1.5708
+  children [
+    DEF wall Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 2.1 0.1 0.05
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject USE wall
+  locked TRUE
+}
+DEF Wallz Solid {
+  translation -1.02 0.05 0.0300034
+  rotation 0 1 0 1.5708
+  children [
+    DEF wall Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 2.1 0.1 0.05
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject USE wall
+  locked TRUE
+}
+DEF Ball Solid {
+  translation -0.5 0.16 -0.2
+  children [
+    DEF Ball Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.6 1
+        roughness 1
+        metalness 0
+      }
+      geometry Sphere {
+        radius 0.12
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE Ball
+  physics Physics {
+  }
+}
+DEF Ball Solid {
+  translation -0.02 0.16 0.73
+  children [
+    DEF Ball Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.6 1
+        roughness 1
+        metalness 0
+      }
+      geometry Sphere {
+        radius 0.12
+        subdivision 2
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE Ball
+  physics Physics {
+  }
+}

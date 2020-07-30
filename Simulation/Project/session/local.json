@@ -1,0 +1,10 @@
+{
+  "debug": false,
+  "monitorLogEnable": true,
+  "port": 1999,
+  "portRewrite": false,
+  "server": "localhost",
+  "simulationServers": [
+    "localhost:2000"
+  ]
+}

@@ -66,6 +66,18 @@ services:
     networks:
       - cluster
 
+  simulation:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./Simulation
+    ports:
+      - 1234:1234
+      - 1999:1999
+      - 2000:2000
+      - 2001:2001
+    networks:
+      - cluster
+
 volumes:
   project:
     driver: local
