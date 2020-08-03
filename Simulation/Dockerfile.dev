@@ -1,36 +1,66 @@
-FROM cyberbotics/webots:R2019b-rev1
+FROM interaze/gazebo-gui-biotic:v1.0
 
+# install build tools
 RUN apt-get update && apt-get install -y \
-    nano \
-    psmisc \
-    python-pip
+      python-catkin-tools \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN python -m pip install \
-    websocket-client \
-    tornado nvidia-ml-py \
-    psutil \
-    requests \
-    tornado \
-    websocket-client \
-    nvidia-ml-py3 \
-    psutil \
-    requests
+# clone ros package repo
+ENV ROS_WS /opt/ros_ws
+RUN mkdir -p $ROS_WS/project
 
-ENV AUDIODEV=null
-ENV DEBIAN_FRONTEND=noninteractive
-ENV DISPLAY=:99
-ENV LIBGL_ALWAYS_SOFTWARE=true
-ENV WEBOTS_HOME=/root/webots
-ENV QTWEBENGINE_DISABLE_SANDBOX=1
+WORKDIR $ROS_WS
+COPY project $ROS_WS/src/project
 
-ADD server.sh /root/server.sh
+RUN chmod +x /opt/ros_ws/src/project/src/main.py
 
-COPY Project /root/webots/Basic
+# install ros package dependencies
+RUN apt-get update && \
+  rosdep update && \
+  rosdep install -y \
+    --from-paths \
+      src/project \
+    --ignore-src && \
+  rm -rf /var/lib/apt/lists/*
 
-COPY Project/session/local.json /root/webots/resources/web/server/config/session/local.json
+# install python3 ROS deps
+RUN apt-get update && \
+    apt-get install -y \
+    python3-pip \
+    python3-yaml && \
+    export ROS_PYTHON_VERSION=3 && \
+    python3 -m pip install rospkg catkin_pkg
 
-COPY Project/simulation/local.json /root/webots/resources/web/server/config/simulation/local.json
+# build ros package source
+RUN catkin config \
+    --extend /opt/ros/$ROS_DISTRO && \
+  catkin build \
+    project
 
-RUN chmod 654 /root/server.sh
+# source ros package from entrypoint
+RUN echo 'export ROS_MASTER_URI=http://master_node:11311' >> $ROS_WS/devel/setup.bash && \
+    sed --in-place --expression \
+    '$isource "$ROS_WS/devel/setup.bash"' \
+    /startup.sh
 
-CMD ["/root/server.sh", ""]
+RUN echo 'rosrun project main.py &' >> /$ROS_WS/devel/setup.bash
+
+#https://answers.ros.org/question/312577/catkin_make-command-not-found-executing-by-a-dockerfile/ ruffsl is a saint
+
+################################################
+
+# Set environment variables for gzclient
+ENV GAZEBO_MASTER_IP=localhost
+ENV GAZEBO_MASTER_URI=$GAZEBO_MASTER_IP:11345
+
+ENV DISPLAY 1.0
+
+EXPOSE 11345
+
+COPY MYROBOT.world /MYROBOT.world
+
+RUN echo 'gzserver --verbose /MYROBOT.world &' >> /$ROS_WS/devel/setup.bash
+
+CMD ["gzserver","--verbose","/MYROBOT.world"]
+
+#gz model --model-name double_pendulum --spawn-file double_pendulum.sdf --world-name worlds/pioneer2dx.world

@@ -24,7 +24,6 @@ Builder.load_file('Settings.kv')
 Builder.load_file('Alerts.kv')
 Config.set('kivy', 'keyboard_mode', 'systemandmulti')
 Config.write()
-Config.set('graphics', 'fullscreen', '1')
 
 class LocationOption(Button):
     pass

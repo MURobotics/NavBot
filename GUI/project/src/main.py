@@ -4,6 +4,9 @@ print(platform.python_version())
 
 import KioskUI as ui
 
+from kivy.core.window import Window
+Window.fullscreen = 'auto'
+
 def main():
     ui.Menu().run()
 

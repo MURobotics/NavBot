@@ -1,7 +1,0 @@
-{
-  "debug": false,
-  "portRewrite": false,
-  "projectDir": "/root/webots/projects/samples",
-  "port": 2000,
-  "monitorLogEnable": true
-}

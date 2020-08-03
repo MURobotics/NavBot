@@ -17,6 +17,46 @@ services:
       - motor_api
       - ocular
       - navigation
+      - simulation
+
+  gui:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./Gui
+    environment:
+      - "PYTHONUNBUFFERED=3"
+      - RESOLUTION=1280x850
+      - XAUTHORITY=/run/user/1000
+    volumes:
+      - /dev/shm:/dev/shm
+      - /dorowu/ubuntu-desktop-lxde-vnc
+    ports:
+      - 6081:80
+      - 5901:5900
+    healthcheck:
+      disable: true
+    networks:
+      - cluster
+    privileged: true
+
+  simulation:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./Simulation
+    ports:
+      - 6080:80
+      - 5900:5900
+    environment:
+      - "PYTHONUNBUFFERED=3"
+      - RESOLUTION=1280x850
+      - XAUTHORITY=/run/user/1000
+    healthcheck:
+      disable: true
+    volumes:
+      - /dev/shm:/dev/shm
+      - /dorowu/ubuntu-desktop-lxde-vnc
+    networks:
+      - cluster
 
   central_logic:
     build:
@@ -26,18 +66,6 @@ services:
       - "PYTHONUNBUFFERED=3"
     networks:
       - cluster
-
-  gui:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./Gui
-    environment:
-      - "PYTHONUNBUFFERED=3"
-    ports:
-      - 5900:5900
-    networks:
-      - cluster
-    privileged: true
 
   motor_api:
     build:
@@ -63,18 +91,6 @@ services:
       context: ./Ocular
     environment:
       - "PYTHONUNBUFFERED=3"
-    networks:
-      - cluster
-
-  simulation:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./Simulation
-    ports:
-      - 1234:1234
-      - 1999:1999
-      - 2000:2000
-      - 2001:2001
     networks:
       - cluster
 

@@ -1,4 +1,4 @@
-FROM ros:melodic-ros-base
+FROM interaze/gazebo-gui-biotic:v1.0
 
 # install kivy dependencies
 RUN apt-get update && apt-get install -y \
@@ -29,12 +29,6 @@ RUN apt-get update && apt-get install -y software-properties-common && \
     add-apt-repository ppa:kivy-team/kivy && \
     apt-get update && \
     sudo apt-get install -y python3-kivy
-
-# install vnc server
-RUN apt-get update && apt-get install -y \
-  x11vnc \
-  xvfb && \
-  mkdir ~/.vnc
 
 # install build tools
 RUN apt-get update && apt-get install -y \
@@ -78,11 +72,10 @@ RUN catkin config \
 RUN echo 'export ROS_MASTER_URI=http://master_node:11311' >> $ROS_WS/devel/setup.bash && \
     sed --in-place --expression \
     '$isource "$ROS_WS/devel/setup.bash"' \
-    /ros_entrypoint.sh
+    /startup.sh
 
-ENV DISPLAY :0
+ENV DISPLAY :1.0
 
-# append vnc server command to setup.bash
-RUN echo 'x11vnc -display :0 -forever -create' >> $ROS_WS/devel/setup.bash
+RUN echo 'rosrun project main.py &' >> /$ROS_WS/devel/setup.bash
 
 #https://answers.ros.org/question/312577/catkin_make-command-not-found-executing-by-a-dockerfile/ ruffsl is a saint
