@@ -22,7 +22,7 @@ services:
   gui:
     build:
       dockerfile: Dockerfile.dev
-      context: ./Gui
+      context: ./GUI
     environment:
       - "PYTHONUNBUFFERED=3"
       - RESOLUTION=1280x850
