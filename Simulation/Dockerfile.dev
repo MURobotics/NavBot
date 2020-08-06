@@ -3,16 +3,18 @@ FROM interaze/gazebo-gui-biotic:v1.0
 # install build tools
 RUN apt-get update && apt-get install -y \
       python-catkin-tools \
+      python-defusedxml \
     && rm -rf /var/lib/apt/lists/*
 
 # clone ros package repo
 ENV ROS_WS /opt/ros_ws
-RUN mkdir -p $ROS_WS/project
 
 WORKDIR $ROS_WS
-COPY project $ROS_WS/src/project
 
-RUN chmod +x /opt/ros_ws/src/project/src/main.py
+COPY PersistingDir $ROS_WS/src
+
+RUN chmod +x $ROS_WS/src/project/src/main.py
+RUN chmod +x $ROS_WS/src/simulation_gazebo/launch/main.launch
 
 # install ros package dependencies
 RUN apt-get update && \
@@ -20,6 +22,8 @@ RUN apt-get update && \
   rosdep install -y \
     --from-paths \
       src/project \
+      src/simulation_description \
+      src/simulation_gazebo \
     --ignore-src && \
   rm -rf /var/lib/apt/lists/*
 
@@ -29,13 +33,15 @@ RUN apt-get update && \
     python3-pip \
     python3-yaml && \
     export ROS_PYTHON_VERSION=3 && \
-    python3 -m pip install rospkg catkin_pkg
+    python3 -m pip install rospkg catkin_pkg defusedxml
 
 # build ros package source
 RUN catkin config \
     --extend /opt/ros/$ROS_DISTRO && \
   catkin build \
-    project
+    project \
+    simulation_gazebo \
+    simulation_description
 
 # source ros package from entrypoint
 RUN echo 'export ROS_MASTER_URI=http://master_node:11311' >> $ROS_WS/devel/setup.bash && \
@@ -43,7 +49,9 @@ RUN echo 'export ROS_MASTER_URI=http://master_node:11311' >> $ROS_WS/devel/setup
     '$isource "$ROS_WS/devel/setup.bash"' \
     /startup.sh
 
-RUN echo 'rosrun project main.py &' >> /$ROS_WS/devel/setup.bash
+RUN echo 'rosrun project main.py &' >> $ROS_WS/devel/setup.bash
+
+#roslaunch simulation_gazebo main.launch
 
 #https://answers.ros.org/question/312577/catkin_make-command-not-found-executing-by-a-dockerfile/ ruffsl is a saint
 
@@ -54,13 +62,8 @@ ENV GAZEBO_MASTER_IP=localhost
 ENV GAZEBO_MASTER_URI=$GAZEBO_MASTER_IP:11345
 
 ENV DISPLAY 1.0
+ENV GAZMAP MY.world
 
 EXPOSE 11345
-
-COPY MYROBOT.world /MYROBOT.world
-
-RUN echo 'gzserver --verbose /MYROBOT.world &' >> /$ROS_WS/devel/setup.bash
-
-CMD ["gzserver","--verbose","/MYROBOT.world"]
 
 #gz model --model-name double_pendulum --spawn-file double_pendulum.sdf --world-name worlds/pioneer2dx.world

@@ -55,6 +55,7 @@ services:
     volumes:
       - /dev/shm:/dev/shm
       - /dorowu/ubuntu-desktop-lxde-vnc
+      - ./Simulation/PersistingDir:/opt/ros_ws/src
     networks:
       - cluster
 
@@ -97,6 +98,7 @@ services:
 volumes:
   project:
     driver: local
+  PersistingDir:
 
 networks:
   cluster:
