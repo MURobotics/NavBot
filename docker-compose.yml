@@ -50,12 +50,16 @@ services:
       - "PYTHONUNBUFFERED=3"
       - RESOLUTION=1280x850
       - XAUTHORITY=/run/user/1000
+      - GAZMAP=MY.world
     healthcheck:
       disable: true
     volumes:
       - /dev/shm:/dev/shm
       - /dorowu/ubuntu-desktop-lxde-vnc
+      - /opt/ros_ws/src/project/
+      # Excludes project sub-dir from being updated w/out rebuild
       - ./Simulation/PersistingDir:/opt/ros_ws/src
+      # Includes volume link of Persisting Dir insite the ROS_WS at SRC sub-Dir for editing
     networks:
       - cluster
 
