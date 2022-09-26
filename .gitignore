@@ -1,9 +1,0 @@
-*DS_STORE
-*.zip
-.*
-!/.gitignore
-__pycache__/
-.idea/
-CentralLogic/cache/
-venv/
-*.pyc
