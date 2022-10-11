@@ -1,4 +1,4 @@
-ARG FROM_IMAGE=ros:foxy
+ARG FROM_IMAGE=ros:humble
 ARG OVERLAY_WS=/opt/ros/overlay_ws
 
 # multi-stage for caching
@@ -20,6 +20,14 @@ RUN mkdir -p /tmp/opt && \
 # multi-stage for building
 FROM $FROM_IMAGE AS builder
 
+# add RealSense ROS2 Wrapper
+RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
+RUN sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
+RUN sudo apt-get install librealsense2-dkms
+RUN sudo apt-get install librealsense2-utils
+RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b ros2-beta
+RUN sudo apt-get install python3-rosdep -y
+
 # install overlay dependencies
 ARG OVERLAY_WS
 WORKDIR $OVERLAY_WS
@@ -28,7 +36,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
     apt-get update && rosdep install -y \
       --from-paths \
         #src/ros2/demos/demo_nodes_cpp \
-        src/demo_nodes_py \
+        src/realsense \
       --ignore-src \
     && rm -rf /var/lib/apt/lists/*
 
@@ -39,7 +47,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
     colcon build \
       --packages-select \
         #demo_nodes_cpp \
-        demo_nodes_py \
+        realsense \
       --mixin $OVERLAY_MIXINS
 
 # source entrypoint setup
@@ -49,4 +57,4 @@ RUN sed --in-place --expression \
       /ros_entrypoint.sh
 
 # run launch file
-CMD ["ros2", "launch", "demo_nodes_cpp", "talker_listener.launch.py"]
+CMD ["ros2", "launch", "realsense", "camera"]
