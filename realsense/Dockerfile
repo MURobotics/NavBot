@@ -21,8 +21,12 @@ RUN mkdir -p /tmp/opt && \
 FROM $FROM_IMAGE AS builder
 
 # add RealSense ROS2 Wrapper
+#required to use add-apt-repository
+RUN apt-get update -y
+RUN apt-get install software-properties-common -y
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
 RUN sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
+RUN apt-get update
 RUN sudo apt-get install librealsense2-dkms
 RUN sudo apt-get install librealsense2-utils
 RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b ros2-beta
