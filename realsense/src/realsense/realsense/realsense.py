@@ -5,12 +5,6 @@ from rclpy.node import Node # Handles the creation of nodes
 class RealSense(Node):
   def __init__(self):
     super().__init__('real_sense')
-    
-
-
-
-  
-
 
 def main(args=None):
   

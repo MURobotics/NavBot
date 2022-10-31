@@ -1,4 +1,4 @@
-ARG FROM_IMAGE=ros:humble
+ARG FROM_IMAGE=ros:galactic
 ARG OVERLAY_WS=/opt/ros/overlay_ws
 
 # multi-stage for caching
@@ -25,13 +25,15 @@ FROM $FROM_IMAGE AS builder
 RUN apt-get update -y && \ 
   apt-get install \
   software-properties-common \
-  python3-rosdep -y
-  
+  python3-rosdep -y \
+  git-all
+
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
 RUN sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
 RUN apt-get update && \
-  apt-get install librealsense2-utils
-RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b ros2-beta
+  apt-get install librealsense2-utils --allow-unauthenticated -y
+RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b ros2-development
+#RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b ros2-beta
 
 # install overlay dependencies
 ARG OVERLAY_WS
@@ -41,7 +43,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
     apt-get update && rosdep install -y \
       --from-paths \
         #src/ros2/demos/demo_nodes_cpp \
-        src/realsense \
+        src/ \
       --ignore-src \
     && rm -rf /var/lib/apt/lists/*
 
