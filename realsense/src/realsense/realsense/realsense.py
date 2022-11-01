@@ -6,6 +6,8 @@ class RealSense(Node):
   def __init__(self):
     super().__init__('real_sense')
 
+    print("hello")
+
 def main(args=None):
   
   # Initialize the rclpy library

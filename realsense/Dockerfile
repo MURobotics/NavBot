@@ -7,7 +7,7 @@ FROM $FROM_IMAGE AS cacher
 # clone overlay source
 ARG OVERLAY_WS
 WORKDIR $OVERLAY_WS/src
-COPY . .
+COPY src/realsense realsense
 
 # copy manifests for caching
 WORKDIR /opt
