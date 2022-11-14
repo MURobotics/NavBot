@@ -43,7 +43,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
     apt-get update && rosdep install -y \
       --from-paths \
         #src/ros2/demos/demo_nodes_cpp \
-        src/ \
+        src/realsense \
       --ignore-src \
     && rm -rf /var/lib/apt/lists/*
 
@@ -62,6 +62,8 @@ ENV OVERLAY_WS $OVERLAY_WS
 RUN sed --in-place --expression \
       '$isource "$OVERLAY_WS/install/setup.bash"' \
       /ros_entrypoint.sh
+
+COPY ./ ./
 
 # run launch file
 CMD ["ros2", "launch", "realsense", "camera"]

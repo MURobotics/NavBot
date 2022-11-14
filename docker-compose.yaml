@@ -6,8 +6,6 @@ services:
     hostname: realsense
     build:
       context: ./realsense
-    networks:
-      - real_sense
     privileged: true
     volumes:
       - /dev/input:/dev/input
