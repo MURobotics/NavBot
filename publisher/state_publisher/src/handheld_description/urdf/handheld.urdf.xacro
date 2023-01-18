@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<robot name="handheld" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find handheld_description)/urdf/_d435i.urdf.xacro"/>
+
+
+  <link name="base_link">
+  </link>
+
+  <xacro:sensor_d435i parent="base_link" name="camera" add_plug="false" use_mesh="true" publish_pointcloud="true">
+    <!--<origin xyz="0 0 ${bumper_offset_z  + base_link_z_offset}"/>-->
+    <origin xyz="0 0 0"/>
+    <!--<pose xyz="-0.0625 0 -0.2" rpy="0 0 0" />-->
+  </xacro:sensor_d435i>
+
+  <!-- <joint name="robot_mount_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="camera_mount"/>
+  </joint> -->
+
+</robot>

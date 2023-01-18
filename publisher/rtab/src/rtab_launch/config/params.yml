@@ -1,0 +1,15 @@
+/rtabmap_ros/rtabmap:
+  ros__parameters:
+    use_mag: False
+    publish_tf: True
+    world_frame: "enu"
+    subscribe_rgbd: True
+    frame_id: "camera_link"
+    approx_sync: False
+#    wait_imu_to_init: True
+#    qos: 1
+
+/rtabmap_ros/rgbd_odometry:
+  ros__parameters:
+    subscribe_rgbd: True
+    frame_id: "camera_link"

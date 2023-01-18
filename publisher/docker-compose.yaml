@@ -1,0 +1,46 @@
+version: '3.9'
+
+networks:
+  pleasework:
+    driver: bridge
+
+services:
+
+  state_publisher:
+    container_name: state_publisher
+    hostname: state_publisher
+    build:
+      context: ./state_publisher
+    environment:
+      #- "ROS_DOMAIN_ID=0"
+      - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+    networks: 
+      - pleasework
+    #network_mode: "host"
+
+  realsense:
+    container_name: realsense
+    hostname: realsense
+    build:
+      context: ./realsense
+    privileged: true
+    volumes:
+      - /dev/input:/dev/input
+    environment:
+      #- "ROS_DOMAIN_ID=0"
+      - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+    networks: 
+      - pleasework
+    #network_mode: "host"
+
+  rtab:
+    container_name: rtab
+    hostname: rtab
+    build:
+      context: ./rtab
+    environment:
+      #- "ROS_DOMAIN_ID=0"
+      - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+    networks: 
+      - pleasework
+    #network_mode: "host"
