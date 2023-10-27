@@ -21,8 +21,8 @@ ARG OVERLAY_WS
 WORKDIR $OVERLAY_WS
 
 # Install rtab and rtab-ros wrapper
-RUN git clone https://github.com/introlab/rtabmap.git src/rtabmap && \
-  git clone --branch ros2 https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
+RUN git clone --depth 1 --branch 0.20.22-humble https://github.com/introlab/rtabmap.git src/rtabmap && \
+  git clone --depth 1 --branch 0.20.22-humble https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
 
 RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
     apt-get update && rosdep install -y \

@@ -7,7 +7,7 @@ FROM $FROM_IMAGE AS prebuilder
 # Install librealsense2-ros wrapper
 ARG OVERLAY_WS
 WORKDIR $OVERLAY_WS/src
-RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b ros2-development realsense-ros
+RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b 4.0.4 realsense-ros
 
 # add RealSense ROS2 Wrapper
 # required to use add-apt-repository
