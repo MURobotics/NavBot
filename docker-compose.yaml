@@ -44,3 +44,15 @@ services:
     networks: 
       - pleasework
     #network_mode: "host"
+
+  nav2:
+    container_name: nav
+    hostname: nav
+    build:
+      context: ./nav2
+    environment:
+      #- "ROS_DOMAIN_ID=0"
+      - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+    networks: 
+      - pleasework
+    #network_mode: "host"

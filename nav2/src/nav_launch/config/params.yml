@@ -1,0 +1,18 @@
+/rtab/rtab:
+  ros__parameters:
+    use_mag: False
+    publish_tf: True
+    map_frame_id: "odom"
+    frame_id: "base_link"
+    subscribe_scan_cloud: True
+    subscribe_depth: False
+    subscribe_rgb: False
+    #subscribe_stereo: True
+    approx_sync: True
+#    wait_imu_to_init: True
+#    qos: 1
+
+/rtabmap_ros/rgbd_odometry:
+  ros__parameters:
+    subscribe_rgbd: True
+    frame_id: "base_link"
